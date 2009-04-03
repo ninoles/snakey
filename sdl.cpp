@@ -115,7 +115,8 @@ while(running)
 }	
 	SDL_Delay(1500);
 	clean_up(message);
-    clean_up(food);
+	clean_up(food);
+	clean_up(messageFollower);
 	SDL_Quit();
 	return 0;
 }
