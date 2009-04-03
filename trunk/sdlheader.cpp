@@ -7,12 +7,14 @@ int parts = 1;
 int renderings = 0;
 int totalScore = 1;
 
+
 int coordinate::n = 0;
 coordinate d[100];
 coordinate foodCo(d);
 
 	
 SDL_Surface *screen = NULL;
+
 
 
 const int SCREEN_WIDTH=SQUARE_SIZE*SQUARE_QUANT;
@@ -93,7 +95,8 @@ bool renderPicture(SDL_Surface *source, SDL_Surface *food, SDL_Surface *follower
 		return false;
 	}
 	
-	SDL_FillRect(screen, &screen->clip_rect, SDL_MapRGB(screen->format,0x00,0x00,0x00));
+	
+	SDL_FillRect(screen, &screen->clip_rect, (unsigned int)0x00000000);
 	
 	apply_surface(foodCo.x,foodCo.y,food,screen);
 	
