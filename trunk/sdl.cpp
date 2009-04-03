@@ -12,7 +12,6 @@ int main(int argc, char* argv[])
 	srand((unsigned)time(0));
 	
 	
-	
 	if(!init())
 	{
 		return 1;
