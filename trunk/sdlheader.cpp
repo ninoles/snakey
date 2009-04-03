@@ -46,7 +46,7 @@ bool init()
 		return false;
 	}
 	
-    SDL_WM_SetCaption("1 SNAEK!", NULL);
+    SDL_WM_SetCaption(":'D", NULL);
 	
 	return true;
 }
@@ -185,11 +185,13 @@ coordinate updateCoFood(coordinate surface, coordinate *d){
 void updateCaption(){		
 		std::string score;
 		score = stringify(parts);
-		score += " SNAEKS! :D  ";
+		score += " SNAEK(S)! :D ||";
+		score += "  Count: ";
 		score += stringify(renderings);
-		score += "  renderings! :D  ";
-		score += "  SCORE:  ";
+		score += " ||";
+		score += "  SCORE: ";
 		totalScore = parts*parts*1000/(renderings+20);
 		score += stringify(totalScore);
+		
 	    SDL_WM_SetCaption(score.c_str(), NULL);
 }
