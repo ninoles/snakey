@@ -12,14 +12,17 @@ int coordinate::n = 0;
 coordinate d[100];
 coordinate foodCo(d);
 
-	
-SDL_Surface *screen = NULL;
-
-
-
 const int SCREEN_WIDTH=SQUARE_SIZE*SQUARE_QUANT;
 const int SCREEN_HEIGHT=SQUARE_SIZE*SQUARE_QUANT;
-const int SCREEN_BPP=32;
+const int SCREEN_BPP=32;	
+
+
+SDL_Surface *screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_HWSURFACE);
+unsigned int mycolor = SDL_MapRGB(screen->format, 0, 0, 0);
+	
+
+
+
 
 
 SDL_Surface* load_image(std::string file)
@@ -42,13 +45,7 @@ bool init()
 		return false;
 	}
 	
-	screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_SWSURFACE);
-	
-	if (screen == NULL){
-		return false;
-	}
-	
-    SDL_WM_SetCaption(":'D", NULL);
+    SDL_WM_SetCaption("Snakey", NULL);
 	
 	return true;
 }
@@ -96,7 +93,8 @@ bool renderPicture(SDL_Surface *source, SDL_Surface *food, SDL_Surface *follower
 	}
 	
 	
-	SDL_FillRect(screen, &screen->clip_rect, (unsigned int)0x00000000);
+	//SDL_FillRect(screen, &screen->clip_rect, (unsigned int)0x00000000);
+	SDL_FillRect(screen, &screen->clip_rect, mycolor);
 	
 	apply_surface(foodCo.x,foodCo.y,food,screen);
 	
