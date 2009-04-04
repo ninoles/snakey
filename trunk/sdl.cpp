@@ -92,7 +92,7 @@ while(running)
   if(timer1 - timer2 > duration){	
   
   timer2 = timer1;
-  if(duration > 120) duration--;
+  if(duration > 150) duration--;
   
   switch (direction){
 			case UP:
