@@ -17,7 +17,7 @@ const int SCREEN_HEIGHT=SQUARE_SIZE*SQUARE_QUANT;
 const int SCREEN_BPP=32;	
 
 
-SDL_Surface *screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_HWSURFACE);
+SDL_Surface *screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_BPP, SDL_HWSURFACE | SDL_DOUBLEBUF);
 unsigned int mycolor = SDL_MapRGB(screen->format, 0, 0, 0);
 	
 
