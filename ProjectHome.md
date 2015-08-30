@@ -1,0 +1,1 @@
+A simple snake game created in C++/SDL
